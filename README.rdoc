@@ -1,0 +1,18 @@
+= nestedarray
+nested_each method iterates through a nested array.  It expects a block with two parameters: one for the outer array and the other for the nested array for each iteration.
+
+nested_each_with_index method iterates through a nested array with indices each as well. 
+It expects a block with four parameters: one for the outer array and the other for the nested array for each iteration. The other two parameters are for the indices for outer and nested arrays.
+
+== Example
+For example [1,2].extend(NestedArray).nested_each([4,6]) {|m,n| puts "#{m * n}"}
+should print 4,6,8 and 12.
+
+
+ 
+ For example [1,2].extend(NestedArray).nested_each_index([4,6]) {|m,n,i,j| puts "#{i}, #{j} -- #{m}: #{n}"}
+ should print 
+ 0,0 -- 1:4
+ 0,1 -- 1:6
+ 1,0 -- 2:4
+ 1,1 -- 2:6
